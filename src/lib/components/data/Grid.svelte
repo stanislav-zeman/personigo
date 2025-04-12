@@ -1,9 +1,10 @@
 <script lang="ts" generics="TRow">
     import { createGrid, ModuleRegistry, AllCommunityModule} from 'ag-grid-community';
     import type { ColDef, GridOptions } from 'ag-grid-community';
+	import { AllEnterpriseModule } from 'ag-grid-enterprise';
 	import { onMount } from 'svelte';
 
-    ModuleRegistry.registerModules([AllCommunityModule]);
+    ModuleRegistry.registerModules([AllCommunityModule, AllEnterpriseModule]);
 
     let gridDiv: HTMLDivElement;
 
