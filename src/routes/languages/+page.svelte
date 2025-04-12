@@ -1,5 +1,5 @@
 <script>
-	import Grid from "$lib/components/Grid.svelte";
+	import Grid from "$lib/components/data/Grid.svelte";
 
     const columns = [
         { headerName: 'ID', field: 'id' },
