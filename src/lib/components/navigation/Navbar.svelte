@@ -1,10 +1,12 @@
 <script lang="ts">
 	import { ChevronLeft, ChevronRight, Moon, Settings, Sun } from 'lucide-svelte';
+
+	let { showMenu = $bindable() } = $props();
 </script>
 
 <div class="navbar bg-base-100 shadow-sm">
 	<label class="btn btn-circle swap swap-rotate">
-		<input type="checkbox" />
+		<input type="checkbox" bind:checked={showMenu} />
 		<ChevronRight class="swap-off" />
 		<ChevronLeft class="swap-on" />
 	</label>
