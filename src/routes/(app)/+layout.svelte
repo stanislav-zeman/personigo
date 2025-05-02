@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
-	import Menu from '$lib/components/navigation/Menu.svelte';
-	import Navbar from '$lib/components/navigation/Navbar.svelte';
+	import { Menu, Navbar } from '$lib/components/navigation';
 
 	let { children } = $props();
 
