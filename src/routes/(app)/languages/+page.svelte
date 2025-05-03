@@ -1,33 +1,17 @@
-<script>
+<script lang="ts">
+	import type { PageProps } from './$types';
 	import Grid from '$lib/components/data/Grid.svelte';
+
+	let { data }: PageProps = $props();
 
 	const columns = [
 		{ headerName: 'ID', field: 'id' },
 		{ headerName: 'Name', field: 'name' },
-		{ headerName: 'Plural forms', field: 'pluralForms' },
-		{ headerName: 'Plural formula', field: 'pluralFormula' }
+		{ headerName: 'Plural forms', field: 'plural_forms' },
+		{ headerName: 'Plural formula', field: 'plural_formula' }
 	];
 
-	const rows = [
-		{
-			id: 'cs',
-			name: 'Czech',
-			pluralForms: 3,
-			pluralFormula: 'N == 1 ? 0 : ((N > 1 && N < 5) ? 1 : 2)'
-		},
-		{
-			id: 'sk',
-			name: 'Slovak',
-			pluralForms: 3,
-			pluralFormula: 'N == 1 ? 0 : ((N > 1 && N < 5) ? 1 : 2)'
-		},
-		{
-			id: 'en',
-			name: 'English',
-			pluralForms: 2,
-			pluralFormula: 'N>1 ? 1 : 0'
-		}
-	];
+	const rows = data.rows;
 </script>
 
 <Grid columnDefs={columns} rowData={rows} />
