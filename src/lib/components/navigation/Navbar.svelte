@@ -1,7 +1,12 @@
 <script lang="ts">
-	import { ChevronLeft, ChevronRight, Moon, Settings, Sun } from 'lucide-svelte';
+	import { authTokenName } from '$lib/constants';
+	import { ChevronLeft, ChevronRight, LogOut, Moon, Settings, Sun } from 'lucide-svelte';
 
 	let { showMenu = $bindable() } = $props();
+
+	let signOut = () => {
+		localStorage.removeItem(authTokenName);
+	};
 </script>
 
 <div class="navbar bg-base-100 shadow-sm">
@@ -21,6 +26,11 @@
 		</label>
 	</div>
 	<div class="flex-none pl-8">
+		<button class="btn btn-square btn-ghost" onclick={signOut}>
+			<a href="/login">
+				<LogOut />
+			</a>
+		</button>
 		<button class="btn btn-square btn-ghost">
 			<a href="/settings">
 				<Settings />
