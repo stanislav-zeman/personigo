@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
 	import { Menu, Navbar } from '$lib/components/navigation';
+	import { authTokenName } from '$lib/constants';
 
 	let { children } = $props();
 
@@ -9,10 +10,7 @@
 	let loggedIn = $state(false);
 
 	onMount(() => {
-		loggedIn = !!localStorage.getItem('session');
-		loggedIn = true; // TODO: Properly set loggedIn variable.
-
-		// Redirect if not logged in and not already on /login
+		loggedIn = !!localStorage.getItem(authTokenName);
 		if (!loggedIn && window.location.pathname !== '/login') {
 			goto('/login');
 		}
