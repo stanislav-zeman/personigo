@@ -41,7 +41,7 @@
 	];
 </script>
 
-<nav class="flex flex-1 flex-col">
+<nav class="flex max-w-48 flex-1 flex-col">
 	<ul class="menu">
 		{#each items as item (item.name)}
 			{@const Icon = item.icon}
