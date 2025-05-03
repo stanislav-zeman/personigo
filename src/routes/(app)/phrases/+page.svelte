@@ -9,7 +9,6 @@
 		{ headerName: 'Phrase', field: 'phrase' }
 	];
 
-	console.log(data.rows);
 	const rows = data.rows;
 </script>
 
