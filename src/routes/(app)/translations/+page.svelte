@@ -1,44 +1,19 @@
-<script>
+<script lang="ts">
+	import type { PageProps } from './$types';
 	import Grid from '$lib/components/data/Grid.svelte';
+
+	let { data }: PageProps = $props();
 
 	const columns = [
 		{ headerName: 'ID', field: 'id' },
-		{ headerName: 'Phrase', field: 'phrase' },
-		{ headerName: 'Language', field: 'language' },
+		{ headerName: 'Phrase ID', field: 'phrase_id' },
+		{ headerName: 'Language ID', field: 'language_id' },
 		{ headerName: 'Translation', field: 'translation' },
-		{ headerName: 'Installation', field: 'installation' },
-		{ headerName: 'Customization', field: 'customization' }
+		{ headerName: 'Installation ID', field: 'installation_id' },
+		{ headerName: 'Customization ID', field: 'customization_id' }
 	];
 
-	const rows = [
-		{
-			id: '1',
-			phrase: 'hello',
-			language: 'English',
-			translation: 'Hi'
-		},
-		{
-			id: '2',
-			phrase: 'hello',
-			language: 'English',
-			translation: 'Hi',
-			installation: 'Televio'
-		},
-		{
-			id: '3',
-			phrase: 'hello',
-			language: 'English',
-			translation: 'Hi',
-			installation: 'Televio',
-			customization: 'Televio PL'
-		},
-		{
-			id: '4',
-			phrase: 'hello',
-			language: 'Czech',
-			translation: 'Ahoj'
-		}
-	];
+	const rows = data.rows;
 </script>
 
 <div>
